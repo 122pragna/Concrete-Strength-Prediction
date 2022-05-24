@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Concrete Strength</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="login">
+            <h1>Prediction of Concrete Compressive Strength</h1>
+            <form action="{{ url_for('predict')}}" method="POST">
+                <input type="text" name="Cement" placeholder="Enter Quantity of Cement (in kg/m3)" required = "required" />
+                <input type="text" name="Slag" placeholder="Enter Quantity of Slag (in kg/m3)" required = "required" />
+                <input type="text" name="Fly Ash" placeholder="Enter Quantity of Fly Ash (in kg/m3)" required = "required" />
+                <input type="text" name="Water" placeholder="Enter Quantity of Water (in kg/m3)" required = "required" />
+                <input type="text" name="SuperPlasticizer" placeholder="Enter Quantity of SuperPlasticizer (in kg/m3)" required = "required" />
+                <input type="text" name="Coarse Aggregate" placeholder="Enter Quantity of Coarse Aggregate (in kg/m3)" required = "required" />
+                <input type="text" name="Fine Aggregate" placeholder="Enter Quantity of Fine Aggregate (in kg/m3)" required = "required" />
+                <input type="text" name="Age" placeholder="Enter Age (in days)" required = "required" />
+                <button type="submit" class="btn btn-primary btn-large btn-block">Predict</button>
+            </form>
+            {{ prediction_text }}
+        </div>
+ 
+    </body>
+</html>
